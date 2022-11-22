@@ -39,7 +39,7 @@ export default function Home() {
             <tbody>
           {movies.map(movie =>
               (
-                <tr>
+                <tr key={movie.movie_id}>
                   <td>{movie.movie_id}</td>
                   <td>{movie.name}</td>
                   <td>{movie.rating}</td>
@@ -67,7 +67,7 @@ export default function Home() {
             <tbody>
           {teamMembers.map(member =>
               (
-                <tr>
+                <tr key={member.id}>
                   <td>{member.id}</td>
                   <td>{member.first_name}</td>
                   <td>{member.last_name}</td>
