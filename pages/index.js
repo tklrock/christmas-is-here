@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useState } from 'react'
 import axios from 'axios';
+import path from 'path';
 
 export default function Home() {
 
@@ -9,10 +10,11 @@ export default function Home() {
   const [teamMembers, setTeamMembers] = useState(null);
 
   React.useEffect(() => {
-    axios.get(`http://localhost:3000/api/getMovies`).then((response) => {
+    const baseURL = path.join(process.cwd(), 'api');
+    axios.get(path.join(baseURL, 'getMovies')).then((response) => {
        setMovies(response.data.results);
     });
-    axios.get(`http://localhost:3000/api/getTeam`).then((response) => {
+    axios.get(path.join(baseURL, 'getTeam')).then((response) => {
        setTeamMembers(response.data.results);
     });
   }, []);
