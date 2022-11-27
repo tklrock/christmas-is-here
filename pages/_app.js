@@ -1,7 +1,7 @@
-import '../styles/globals.css'
 import Head from "next/head";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FullLayout } from '../layouts/FullLayout';
+import "../styles/style.scss";
+import FullLayout from "../src/layouts/FullLayout";
 
 function MyApp({ Component, pageProps }) {
   return (

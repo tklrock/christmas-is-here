@@ -1,4 +1,5 @@
 import { Button, Nav, NavItem } from "reactstrap";
+import Logo from "../../logo/Logo";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -9,9 +10,44 @@ const navigation = [
     icon: "bi bi-house",
   },
   {
-    title: "Priority Search",
-    href: "/ui/forms",
-    icon: "bi bi-search",
+    title: "Movies",
+    href: "/ui/movies",
+    icon: "bi bi-film",
+  },
+  {
+    title: "Songs",
+    href: "/ui/songs",
+    icon: "bi bi-music-note-beamed",
+  },
+  {
+    title: "Stories",
+    href: "/ui/stories",
+    icon: "bi bi-book",
+  },
+  {
+    title: "Elf Yourself",
+    href: "/ui/elf",
+    icon: "bi bi-person-circle",
+  },
+  {
+    title: "Calendar",
+    href: "/ui/calendar",
+    icon: "bi bi-calendar-date",
+  },
+  {
+    title: "Wishlist",
+    href: "/ui/wishlist",
+    icon: "bi bi-list-stars",
+  },
+  {
+    title: "Advent",
+    href: "/ui/advent",
+    icon: "bi bi-calendar-heart",
+  },
+  {
+    title: "Budget",
+    href: "/ui/budget",
+    icon: "bi bi-piggy-bank",
   },
 ];
 
@@ -22,7 +58,7 @@ const Sidebar = ({ showMobilemenu }) => {
   return (
     <div className="p-3">
       <div className="d-flex align-items-center">
-        {/* <Logo /> */}
+        <Logo />
         <Button
           close
           size="sm"
@@ -38,12 +74,12 @@ const Sidebar = ({ showMobilemenu }) => {
                 href={navi.href}
                 className={
                   location === navi.href
-                    ? "text-primary nav-link py-3"
+                    ? "text-danger nav-link py-3"
                     : "nav-link text-secondary py-3"
                 }
               >
-                <i className={navi.icon}></i>
-                <span className="ms-3 d-inline-block">{navi.title}</span>
+                  <i className={navi.icon}></i>
+                  <span className="ms-3 d-inline-block">{navi.title}</span>
               </Link>
             </NavItem>
           ))}
