@@ -74,7 +74,7 @@ const Sidebar = ({ showMobilemenu }) => {
                 href={navi.href}
                 className={
                   location === navi.href
-                    ? "text-primary nav-link py-3"
+                    ? "text-danger nav-link py-3"
                     : "nav-link text-secondary py-3"
                 }
               >
