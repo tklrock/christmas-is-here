@@ -169,7 +169,7 @@ const Advent = () => {
                 <ModalHeader
                     toggle={toggle}
                 >
-                    It's the most wonderful time of the year!
+                    It&apos;s the most wonderful time of the year!
                 </ModalHeader>
                 <ModalBody>
                     {modalContent}
