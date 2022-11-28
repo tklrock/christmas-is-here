@@ -1,4 +1,4 @@
-import { Table, Button, Modal, ModalBody } from 'reactstrap'
+import { Table, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap'
 import { AdventDay } from '../../components/Custom/adventDay';
 import { useState } from 'react';
 
@@ -164,10 +164,20 @@ const Advent = () => {
             </Table>
             <Modal isOpen={modal}
                 toggle={toggle}
-                modalTransition={{ timeout: 500 }}>
+            >
+                <ModalHeader
+                    toggle={toggle}
+                >
+                    It's the most wonderful time of the year!
+                </ModalHeader>
                 <ModalBody>
                     {modalContent}
                 </ModalBody>
+                <ModalFooter>
+                    <Button className='btn btn-success' onClick={toggle}>
+                        Close
+                    </Button>
+                </ModalFooter>
             </Modal>
         </>
     )
