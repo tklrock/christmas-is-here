@@ -93,17 +93,18 @@ const ADVENT_DATA = [
 const Advent = () => {
 
     const [modalContent, setModalContent] = useState('');
+    const [modalDay, setModalDay] = useState('')
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
 
     const showAdventDay = (day, content) => {
-        const today = new Date().getDate()
-        console.log(today)
+        // const today = new Date().getDate()
+        const today = 14
         if (day > today) {
-            setModalContent('No peeksies!!')
+            setModalContent(`It's not Dec ${day} yet! No peeksies!!`)
             toggle()
-        }{
+        } else {
             setModalContent(content)
             toggle()
         }  
