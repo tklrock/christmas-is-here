@@ -2,7 +2,7 @@ import executeQuery from './db';
 
 export default async function handler(req, res) {
 
-    const query = "SELECT * FROM movie;";
+    const query = "SELECT * FROM movie ORDER BY rating DESC;";
     const values = [];
     try {
         const movies = await executeQuery(query, values);

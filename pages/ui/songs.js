@@ -34,7 +34,7 @@ const Songs = () => {
                             (
                                 <tr key={song.song_id}>
                                     <td>{song.song_id}</td>
-                                    <Link href={`song/${encodeURIComponent(song.song_id.toString())}`}>{song.title}</Link>
+                                    <Link href={`songs/${encodeURIComponent(song.song_id.toString())}`}>{song.title}</Link>
                                     <td>{song.artist}</td>
                                     <td>{song.album}</td>
                                     <td>{song.rating}</td>
@@ -47,8 +47,10 @@ const Songs = () => {
                     </tbody>
                 </table>
             ): <>
-                <div class="spinner-border" role="status">
-                    <span class="sr-only"></span>
+                <div class="d-flex justify-content-center">
+                    <div className="spinner-border text-center" role="status">
+                        <span className="sr-only"></span>
+                    </div>
                 </div>
             </>
             }
