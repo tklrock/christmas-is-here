@@ -1,11 +1,9 @@
-import { Table } from 'reactstrap'
+import { Table, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap'
 import { AdventDay } from '../../components/Custom/adventDay';
+import { useState } from 'react';
 
 const ADVENT_DATA = [
     {
-        day: '',
-        content: ''
-    },{
         day: '',
         content: ''
     },{
@@ -89,27 +87,28 @@ const ADVENT_DATA = [
     },{
         day: '25',
         content: '25th day of advent'
-    },{
-        day: '26',
-        content: '26th day of advent'
-    },{
-        day: '27',
-        content: '27th day of advent'
-    },{
-        day: '28',
-        content: '28th day of advent'
-    },{
-        day: '29',
-        content: '29th day of advent'
-    },{
-        day: '30',
-        content: '30th day of advent'
-    },{
-        day: '31',
-        content: '31st day of advent'
     }
 ]
+
 const Advent = () => {
+
+    const [modalContent, setModalContent] = useState('');
+    const [modalDay, setModalDay] = useState('')
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
+
+    const showAdventDay = (day, content) => {
+        // const today = new Date().getDate()
+        const today = 14
+        if (day > today) {
+            setModalContent(`It's not Dec ${day} yet! No peeksies!!`)
+            toggle()
+        } else {
+            setModalContent(content)
+            toggle()
+        }  
+    }
 
     const getRowContent = (startIndex, endIndex) => {
         let contentArray = []
@@ -117,10 +116,17 @@ const Advent = () => {
             const adventItem = ADVENT_DATA[i];
             contentArray.push(
                 <td>
-                    <AdventDay
-                        day={adventItem.day}
-                        content={adventItem.content}
-                    />
+                    {ADVENT_DATA[i].content && 
+                        <button 
+                            className={i % 2 == 0 ? 'btn btn-success' : 'btn btn-danger'}
+                            onClick={() => showAdventDay(ADVENT_DATA[i].day, ADVENT_DATA[i].content)}
+                        >
+                            <AdventDay
+                                day={adventItem.day}
+                                content={adventItem.content}
+                            />
+                        </button>
+                    }
                 </td>
             )
         }
@@ -133,13 +139,13 @@ const Advent = () => {
             <Table bordered responsive>
                 <thead>
                     <tr>
-                        <th>Sunday</th>
                         <th>Monday</th>
                         <th>Tuesday</th>
                         <th>Wednesday</th>
                         <th>Thursday</th>
                         <th>Friday</th>
                         <th>Saturday</th>
+                        <th>Sunday</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -155,11 +161,25 @@ const Advent = () => {
                     <tr>
                         {getRowContent(21,28)}
                     </tr>
-                    <tr>
-                        {getRowContent(28,35)}
-                    </tr>
                 </tbody>
             </Table>
+            <Modal isOpen={modal}
+                toggle={toggle}
+            >
+                <ModalHeader
+                    toggle={toggle}
+                >
+                    It&apos;s the most wonderful time of the year!
+                </ModalHeader>
+                <ModalBody>
+                    {modalContent}
+                </ModalBody>
+                <ModalFooter>
+                    <Button className='btn btn-success' onClick={toggle}>
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
         </>
     )
 }
