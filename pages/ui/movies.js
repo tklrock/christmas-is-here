@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import axios from 'axios';
 import path from 'path';
+import { MovieCard } from '../../components/Custom/MovieCard';
 
 const Movies = () => {
 
@@ -19,31 +20,15 @@ const Movies = () => {
             <h1>Movies</h1>
             {movies?.length > 0 
             ? (
-                <table>
-                    <thead>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Rating</th>
-                        <th>Year</th>
-                        <th>Description</th>
-                    </thead>
-                    <tbody>
-                        {movies.map(movie =>
-                            (
-                                <tr key={movie.movie_id}>
-                                <td>{movie.movie_id}</td>
-                                <Link href={`movies/${encodeURIComponent(movie.movie_id.toString())}`}><td>{movie.name}</td></Link>
-                                <td>{movie.rating}</td>
-                                <td>{movie.year}</td>
-                                <td>{movie.description}</td>
-                                </tr>
-                            )
-                            )
-                        }
-                    </tbody>
-                </table>
+                <div style={{display: 'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
+                    {movies.map(movie => (
+                        <Link href={`movies/${encodeURIComponent(movie.movie_id.toString())}`} className="text-black text-decoration-none" style={{width:'400px'}}>
+                            <MovieCard movie = {movie}/>
+                        </Link>
+                    ))}
+                </div>
             ): <>
-                <div class="d-flex justify-content-center">
+                <div className="d-flex justify-content-center">
                     <div className="spinner-border text-center" role="status">
                         <span className="sr-only"></span>
                     </div>
