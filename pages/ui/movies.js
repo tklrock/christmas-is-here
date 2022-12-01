@@ -20,9 +20,9 @@ const Movies = () => {
             <h1>Movies</h1>
             {movies?.length > 0 
             ? (
-                <div key={movie.movie_id} style={{display: 'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
+                <div style={{display: 'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
                     {movies.map(movie => (
-                        <Link href={`movies/${encodeURIComponent(movie.movie_id.toString())}`} className="text-black text-decoration-none" style={{width:'400px'}}>
+                        <Link key={movie.movie_id} href={`movies/${encodeURIComponent(movie.movie_id.toString())}`} className="text-black text-decoration-none" style={{width:'400px'}}>
                             <MovieCard movie = {movie}/>
                         </Link>
                     ))}
