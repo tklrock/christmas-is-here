@@ -3,7 +3,7 @@ export const MovieCard = ({movie}) => {
 
     return (
         <>
-        <div className="border border-dark border-2 rounded-5 bg-image hover-overlay bg-white p-1 m-2 container cardHover">
+        <div className="border border-dark border-2 rounded-5 bg-image hover-overlay bg-white p-1 m-3 container cardHover">
                 <div className="row">
                     <div className="col text-center">
                         <h2 className="font-weight-bolder">{movie.name}</h2>                    
