@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link';
 import axios from 'axios';
 import path from 'path';
 
@@ -31,7 +32,7 @@ const Movies = () => {
                             (
                                 <tr key={movie.movie_id}>
                                 <td>{movie.movie_id}</td>
-                                <td>{movie.name}</td>
+                                <Link href={`movies/${encodeURIComponent(movie.movie_id.toString())}`}><td>{movie.name}</td></Link>
                                 <td>{movie.rating}</td>
                                 <td>{movie.year}</td>
                                 <td>{movie.description}</td>
@@ -42,8 +43,10 @@ const Movies = () => {
                     </tbody>
                 </table>
             ): <>
-                <div class="spinner-border" role="status">
-                    <span class="sr-only"></span>
+                <div class="d-flex justify-content-center">
+                    <div className="spinner-border text-center" role="status">
+                        <span className="sr-only"></span>
+                    </div>
                 </div>
             </>
             }
