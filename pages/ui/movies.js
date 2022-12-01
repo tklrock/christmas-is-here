@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import axios from 'axios';
 import path from 'path';
-import { MovieCard } from '../../components/Custom/MovieCard';
+import { MovieCard } from '../../components/Custom/movieCard';
 
 const Movies = () => {
 
