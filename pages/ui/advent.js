@@ -117,7 +117,7 @@ const Advent = () => {
             contentArray.push(
                 <td>
                     {ADVENT_DATA[i].content && 
-                        <button 
+                        <div 
                             className={i % 2 == 0 ? 'btn btn-success' : 'btn btn-danger'}
                             onClick={() => showAdventDay(ADVENT_DATA[i].day, ADVENT_DATA[i].content)}
                         >
@@ -125,7 +125,7 @@ const Advent = () => {
                                 day={adventItem.day}
                                 content={adventItem.content}
                             />
-                        </button>
+                        </div>
                     }
                 </td>
             )

@@ -54,3 +54,29 @@
   box-shadow: 10px 10px;
   text-decoration: underline;
 }
+
+@font-face {
+  font-family: CandyStriped;
+  src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
+}
+
+h1 {
+  font-family: CandyStriped;
+  color: red;
+  font-size: 60px;
+}
+
+
+
+@font-face {
+  font-family: CandyStriped;
+  src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
+}
+
+h1 {
+  font-family: CandyStriped;
+  color: red;
+  font-size: 60px;
+}
+
+
