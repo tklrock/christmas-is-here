@@ -49,3 +49,16 @@
 .apexcharts-toolbar {
   z-index: 0 !important;
 }
+
+@font-face {
+  font-family: CandyStriped;
+  src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
+}
+
+h1 {
+  font-family: CandyStriped;
+  color: red;
+  font-size: 60px;
+}
+
+
