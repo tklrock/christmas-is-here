@@ -55,10 +55,32 @@
   src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Christmas;
+  src: url("/fonts/ChristmasBell.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Solway;
+  src: url("/fonts/Solway-Regular.ttf") format("opentype");
+}
+
 h1 {
   font-family: CandyStriped;
   color: red;
   font-size: 60px;
+}
+
+.heading {
+  font-family: Christmas;
+  font-size: 80px;
+  color: white
+}
+
+.subtitle {
+  font-family: Solway;
+  font-size: 20px;
+  color: white
 }
 
 

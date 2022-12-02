@@ -33,8 +33,8 @@ export default function Home() {
   return (
     <>
       <div style={BackgroundStyles}>
-        <h1>Christmas is Here!</h1>
-        <p>Your one stop shop for Christmas cheer</p>
+        <h1 className='heading'>(Christmas is Here)</h1>
+        <p className='subtitle'>Your one stop shop for Christmas cheer</p>
         {/* <img src='/img/ornamentbg.jpg' style={{visibility: 'hidden', maxHeight: 200}} /> */}
       </div>
       <h1>Team Members</h1>
