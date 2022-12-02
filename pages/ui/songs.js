@@ -7,6 +7,10 @@ const Songs = () => {
 
     const [songs, setSongs] = useState(null);
 
+    const displaySongs = () => {
+        alert(1);
+    }
+
     React.useEffect(() => {
         const baseURL = path.join(process.cwd(), 'api');
         axios.get(path.join(baseURL, 'songs')).then((response) => {
@@ -47,7 +51,7 @@ const Songs = () => {
                     </tbody>
                 </table>
             ): <>
-                <div class="d-flex justify-content-center">
+                <div className="d-flex justify-content-center">
                     <div className="spinner-border text-center" role="status">
                         <span className="sr-only"></span>
                     </div>

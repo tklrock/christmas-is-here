@@ -1,15 +1,16 @@
 const Wishlist = () => {
 
     const displayWishlist = () => {
-            item = document.querySelector('#ItemName').value
-            price = document.querySelector('#Price').value
-            link = document.querySelector('#Link').value
-            notes = document.querySelector('#Notes').value
+            // item = document.querySelector('#ItemName').value
+            // price = document.querySelector('#Price').value
+            // link = document.querySelector('#Link').value
+            // notes = document.querySelector('#Notes').value
 
-            alert("Item: " + item + "Price: " + price + "Link: " + link + "Notes: " + notes)
+            // alert("Item: " + item + "Price: " + price + "Link: " + link + "Notes: " + notes)
+            alert("Good luck with the merge conflicts");
     }
 
-    document.querySelector('button').addEventListener('click', displayWishlist)
+    // document.querySelector('button').addEventListener('click', displayWishlist)
 
     return (
         <>

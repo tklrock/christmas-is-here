@@ -49,6 +49,23 @@
 .apexcharts-toolbar {
   z-index: 0 !important;
 }
+.cardHover:hover {
+  background: linear-gradient(#d83d3d, #f0ececbd,#6fba7f);
+  box-shadow: 10px 10px;
+}
+
+@font-face {
+  font-family: CandyStriped;
+  src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
+}
+
+h1 {
+  font-family: CandyStriped;
+  color: red;
+  font-size: 60px;
+}
+
+
 
 @font-face {
   font-family: CandyStriped;
