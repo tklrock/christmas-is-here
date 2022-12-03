@@ -14,16 +14,24 @@ import Matt from '../src/assets/images/team/Matt.png'
 import Mark from '../src/assets/images/team/Mark.jpg'
 import Jessie from '../src/assets/images/team/Jessie.JPG'
 
-const BackgroundStyles = {
-  backgroundImage: "url('/img/ornamentbg.jpg')",
-  backgroundRepeat: 'no-repeat',
-  borderRadius: '25px',
-  backgroundSize: 'cover',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: 300
+const iconStylesRed = {
+  backgroundColor: 'red',
+  borderRadius: '50%',
+  width: '100px',
+  height: '100px',
+  border: 'black',
+  borderWidth: '3px',
+  borderStyle: 'solid'
+}
+
+const iconStylesGreen = {
+  backgroundColor: 'green',
+  borderRadius: '50%',
+  width: '100px',
+  height: '100px',
+  border: 'black',
+  borderWidth: '3px',
+  borderStyle: 'solid'
 }
 
 const teamImages = {
@@ -48,10 +56,42 @@ export default function Home() {
 
   return (
     <div style={{textAlign: 'center'}}>
-      <div style={BackgroundStyles}>
+      <div className='banner-bg'>
         <h1 className='heading'>(Christmas is Here)</h1>
-        <p className='subtitle'>Your one stop shop for Christmas cheer</p>
-        {/* <img src='/img/ornamentbg.jpg' style={{visibility: 'hidden', maxHeight: 200}} /> */}
+        <p className='subtitle'>Your one-stop shop for Christmas cheer</p>
+      </div>
+      
+      <div className='lights-bg-styles'>
+        <a href='/ui/movies' className='icon-link'>
+          <div className='icon-styles icon-green' href='/ui/movies'> 
+            <i className='bi bi-film' style={{fontSize: '40px'}}/>
+            <div>Movies</div>
+          </div>
+        </a>
+        <a href='/ui/songs' className='icon-link'>
+          <div className='icon-styles icon-red'> 
+            <i className='bi bi-music-note-beamed' style={{fontSize: '40px'}}/>
+            <div>Music</div>
+          </div>
+        </a>
+        <a href='/ui/elf' className='icon-link'>
+          <div className='icon-styles icon-green'> 
+            <i className='bi bi-person-circle' style={{fontSize: '40px'}}/>
+            <div>Elf Yourself</div>
+          </div>
+        </a>
+        <a href='/ui/wishlist' className='icon-link'>
+          <div className='icon-styles icon-red'> 
+            <i className='bi bi-list-stars' style={{fontSize: '40px'}}/>
+            <div>Wishlist</div>
+          </div>
+        </a>
+        <a href='/ui/advent' className='icon-link'>
+          <div className='icon-styles icon-green'> 
+            <i className='bi bi-calendar-heart' style={{fontSize: '40px'}}/>
+            <div>Advent</div>
+          </div>
+        </a>
       </div>
       <h1 style={{paddingTop: '50px'}}>Meet the Team!</h1>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
@@ -60,20 +100,14 @@ export default function Home() {
         teamMembers.map(member =>
             (
               <div style={{display: 'flex', flexDirection:'column'}}>
-              <Image
-                src={teamImages[member.first_name]}
-                alt="profile"
-                className="rounded-circle m-3"
-                width="150"
-                height="150"
-              />
-              <h5>{member.first_name + ' ' + member.last_name}</h5>
-              {/* <tr key={member.id}>
-                <td>{member.id}</td>
-                <td>{member.first_name}</td>
-                <td>{member.last_name}</td>
-                <td>{member.role}</td>
-              </tr> */}
+                <Image
+                  src={teamImages[member.first_name]}
+                  alt="profile"
+                  className="rounded-circle m-3"
+                  width="150"
+                  height="150"
+                />
+                <h5>{member.first_name + ' ' + member.last_name}</h5>
               </div>
             )
           )

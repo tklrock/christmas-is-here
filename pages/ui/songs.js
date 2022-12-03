@@ -20,7 +20,7 @@ const Songs = () => {
 
     return (
         <>
-            <h1>Songs</h1>
+            <h1>Music</h1>
             {songs?.length > 0 
             ? (
                 <table>
