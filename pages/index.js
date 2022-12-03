@@ -62,36 +62,36 @@ export default function Home() {
       </div>
       
       <div className='lights-bg-styles'>
-        <a href='/ui/movies' className='icon-link'>
+        <Link href='/ui/movies' className='icon-link'>
           <div className='icon-styles icon-green' href='/ui/movies'> 
             <i className='bi bi-film' style={{fontSize: '40px'}}/>
             <div>Movies</div>
           </div>
-        </a>
-        <a href='/ui/songs' className='icon-link'>
+        </Link>
+        <Link href='/ui/songs' className='icon-link'>
           <div className='icon-styles icon-red'> 
             <i className='bi bi-music-note-beamed' style={{fontSize: '40px'}}/>
             <div>Music</div>
           </div>
-        </a>
-        <a href='/ui/elf' className='icon-link'>
+        </Link>
+        <Link href='/ui/elf' className='icon-link'>
           <div className='icon-styles icon-green'> 
             <i className='bi bi-person-circle' style={{fontSize: '40px'}}/>
             <div>Elf Yourself</div>
           </div>
-        </a>
-        <a href='/ui/wishlist' className='icon-link'>
+        </Link>
+        <Link href='/ui/wishlist' className='icon-link'>
           <div className='icon-styles icon-red'> 
             <i className='bi bi-list-stars' style={{fontSize: '40px'}}/>
             <div>Wishlist</div>
           </div>
-        </a>
-        <a href='/ui/advent' className='icon-link'>
+        </Link>
+        <Link href='/ui/advent' className='icon-link'>
           <div className='icon-styles icon-green'> 
             <i className='bi bi-calendar-heart' style={{fontSize: '40px'}}/>
             <div>Advent</div>
           </div>
-        </a>
+        </Link>
       </div>
       <h1 style={{paddingTop: '50px'}}>Meet the Team!</h1>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
@@ -99,7 +99,7 @@ export default function Home() {
         ? (
         teamMembers.map(member =>
             (
-              <div style={{display: 'flex', flexDirection:'column'}}>
+              <div key={member.id} style={{display: 'flex', flexDirection:'column'}}>
                 <Image
                   src={teamImages[member.first_name]}
                   alt="profile"
