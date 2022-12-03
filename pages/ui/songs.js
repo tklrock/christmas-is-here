@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import path from 'path';
+import { SongCard } from '../../components/Custom/songCard';
 
 const Songs = () => {
 
@@ -23,33 +24,16 @@ const Songs = () => {
             <h1>Songs</h1>
             {songs?.length > 0 
             ? (
-                <table>
-                    <thead>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Rating</th>
-                        <th>Year</th>
-                        <th>Description</th>
-                    </thead>
-                    <tbody>
-                        {songs.map(song =>
-                            (
-                                <tr key={song.song_id}>
-                                    <td>{song.song_id}</td>
-                                    <Link href={`songs/${encodeURIComponent(song.song_id.toString())}`}>{song.title}</Link>
-                                    <td>{song.artist}</td>
-                                    <td>{song.album}</td>
-                                    <td>{song.rating}</td>
-                                    <td>{song.year}</td>
-                                    <td>{song.description}</td>
-                                </tr>
-                            )
-                            )
-                        }
-                    </tbody>
-                </table>
+                <div style={{display: 'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
+                    {songs.map(song => (
+                        // <Link key={song.song_id} href={`songs/${encodeURIComponent(song.song_id.toString())}`} className="text-black text-decoration-none" style={{width:'400px'}}>
+                        <div style={{width:'400px'}} key={song.song_id}>
+                            <SongCard song = {song}/>
+                        </div>
+                            
+                        // </Link>
+                    ))}
+                </div>
             ): <>
                 <div className="d-flex justify-content-center">
                     <div className="spinner-border text-center" role="status">

@@ -12,7 +12,7 @@ export const MovieCard = ({movie}) => {
                 <div className="row">
                     <div className="col-1"></div>
                     <div className="col-5">
-                        <h4 className="text-grey">{movie.year}</h4>
+                        <h4 style={{color: 'gray'}}>{movie.year}</h4>
                         <p>{movie.description}</p>
                     </div>
                     <div className="col-5">

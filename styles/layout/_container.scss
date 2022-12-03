@@ -53,6 +53,22 @@
   background: linear-gradient(#d83d3d, #f0ececbd,#6fba7f);
   box-shadow: 10px 10px;
 }
+.songCard {
+  background: linear-gradient(#8cbd96ce,#fcf9f9bd,#d87e7ec6);
+}
+.spotifyImg {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10px;
+}
+.spotify:hover .spotifyImg{
+  border-style: solid;
+  border-color: black;
+  border-width: 3pt;
+  border-radius: 100%
+}
+
 
 @font-face {
   font-family: CandyStriped;
