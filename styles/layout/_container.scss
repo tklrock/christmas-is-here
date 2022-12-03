@@ -116,4 +116,55 @@ h1 {
   color: whitesmoke
 }
 
+.banner-bg {
+  background-image: url('/img/ornamentbg.jpg');
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px
+}
 
+.lights-bg-styles {
+  background-image: url('/img/ChristmasLights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  align-items: center
+}
+
+.icon-styles {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: black;
+  border-width: 3px;
+  border-style: solid
+}
+
+.icon-styles:hover {
+  border-width: 4px;
+}
+
+.icon-red {
+  background-color: rgb(255, 54, 54);
+}
+
+.icon-green {
+  background-color: rgb(4, 185, 4);
+}
+
+.icon-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.icon-link:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
