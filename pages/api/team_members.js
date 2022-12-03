@@ -5,8 +5,8 @@ export default async function handler(req, res) {
     const query = "SELECT * FROM team_member;";
     const values = [];
     try {
-        const movies = await executeQuery(query, values);
-        res.status(200).json({results: movies});
+        const team_members = await executeQuery(query, values);
+        res.status(200).json({results: team_members});
     } catch (error){
         res.status(500).error({error: error.message});
     }

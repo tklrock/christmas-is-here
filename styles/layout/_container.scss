@@ -49,3 +49,122 @@
 .apexcharts-toolbar {
   z-index: 0 !important;
 }
+.cardHover:hover {
+  background: linear-gradient(#d83d3d, #f0ececbd,#6fba7f);
+  box-shadow: 10px 10px;
+}
+.songCard {
+  background: linear-gradient(#8cbd96ce,#fcf9f9bd,#d87e7ec6);
+}
+.spotifyImg {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10px;
+}
+.spotify:hover .spotifyImg{
+  border-style: solid;
+  border-color: black;
+  border-width: 3pt;
+  border-radius: 100%
+}
+
+
+@font-face {
+  font-family: CandyStriped;
+  src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
+}
+
+h1 {
+  font-family: CandyStriped;
+  color: red;
+  font-size: 60px;
+}
+
+
+
+@font-face {
+  font-family: CandyStriped;
+  src: url("/fonts/KGHardCandyStriped.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Christmas;
+  src: url("/fonts/ChristmasBell.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Solway;
+  src: url("/fonts/Solway-Regular.ttf") format("opentype");
+}
+
+h1 {
+  font-family: CandyStriped;
+  color: red;
+  font-size: 60px;
+}
+
+.heading {
+  font-family: Christmas;
+  font-size: 80px;
+  color: whitesmoke
+}
+
+.subtitle {
+  font-family: Solway;
+  font-size: 20px;
+  color: whitesmoke
+}
+
+.banner-bg {
+  background-image: url('/img/ornamentbg.jpg');
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px
+}
+
+.lights-bg-styles {
+  background-image: url('/img/ChristmasLights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  align-items: center
+}
+
+.icon-styles {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: black;
+  border-width: 3px;
+  border-style: solid
+}
+
+.icon-styles:hover {
+  border-width: 4px;
+}
+
+.icon-red {
+  background-color: rgb(255, 54, 54);
+}
+
+.icon-green {
+  background-color: rgb(4, 185, 4);
+}
+
+.icon-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.icon-link:hover {
+  color: inherit;
+  text-decoration: inherit;
+}

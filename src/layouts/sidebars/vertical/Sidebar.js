@@ -15,7 +15,7 @@ const navigation = [
     icon: "bi bi-film",
   },
   {
-    title: "Songs",
+    title: "Music",
     href: "/ui/songs",
     icon: "bi bi-music-note-beamed",
   },
