@@ -14,7 +14,7 @@ export const SongCard = ({song}) => {
                         <h4>{song.artist}</h4>
                     </div>
                     <div className="col-6 text-center">
-                        <h4>"{song.album}"</h4>
+                        <h4>&quot;{song.album}&quot;</h4>
                     </div>
                     <div className="col-1"></div>
                 </div>
