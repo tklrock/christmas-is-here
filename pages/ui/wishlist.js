@@ -1,32 +1,36 @@
+import { AddItem } from '../../components/Custom/addItem';
+import { WishList } from '../../components/Custom/wishList';
+import React, { useState } from 'react'
+import axios from 'axios';
+import path from 'path';
+
 const Wishlist = () => {
 
-    const displayWishlist = () => {
-            // item = document.querySelector('#ItemName').value
-            // price = document.querySelector('#Price').value
-            // link = document.querySelector('#Link').value
-            // notes = document.querySelector('#Notes').value
+    const [items, setItems] = useState(null);
 
-            // alert("Item: " + item + "Price: " + price + "Link: " + link + "Notes: " + notes)
-            alert("Good luck with the merge conflicts");
+    const getWishlist = () => {
+        const baseURL = path.join(process.cwd(), 'api');
+        axios.get(path.join(baseURL, 'wishlist')).then((response) => {
+            setItems(response.data.results)  
+        });
     }
-
-    // document.querySelector('button').addEventListener('click', displayWishlist)
 
     return (
         <>
-            <h1>Wishlist</h1>
-
-            <form>
-                <label for="ItemName">Item Name:</label><br/>
-                <input type="text" id="ItemName" name="ItemName"></input><br/>
-                <label for="Price">Price:</label><br/>
-                <input type="text" id="Price" name="Price"></input><br/>
-                <label for="Link">Link:</label><br/>
-                <input type="text" id="Link" name="Link"></input><br/>
-                <label for="Notes">Notes:</label><br/>
-                <input type="text" id="Notes" name="Notes"></input><br/>
-                <button type="submit">Submit</button>
-            </form>
+            
+            <div className="container">
+                <div className="row">
+                    <h1>Wishlist</h1>
+                </div>
+                <div className="row">
+                    <div className="col-4">
+                        <AddItem myPath={process.cwd()} getWishlist={getWishlist} />
+                    </div>
+                    <div className="col-8">
+                        <WishList myPath={process.cwd()} getWishlist={getWishlist} items={items}/>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

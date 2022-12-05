@@ -1,7 +1,7 @@
 const Elf = () => {
     return (
         <>
-            <h1>Elf Yourself <a href="https://www.elfyourself.com/" className="h3"><i class="bi bi-box-arrow-up-right"></i></a></h1>
+            <h1>Elf Yourself <a href="https://www.elfyourself.com/" className="h3"><i className="bi bi-box-arrow-up-right"></i></a></h1>
             <div className="text-center">
                 <iframe id="elfYourself"
                     title="Elf Yourself"
