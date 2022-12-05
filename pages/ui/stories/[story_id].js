@@ -31,7 +31,8 @@ const Story = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-1"></div>
+                        <div className="col-5">
                             <div className="row">
                                 <h2>{story.author}</h2>
                             </div>
@@ -53,9 +54,10 @@ const Story = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-6">
+                        <div className="col-5 text-center">
                             <img src={story.image} className="w-100 rounded-4 m-2"/>
                         </div>
+                        <div className="col-1"></div>
                         
                     </div>
                     
