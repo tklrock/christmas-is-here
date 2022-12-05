@@ -51,7 +51,7 @@ const Song = () => {
                             </div>
                             <div className="row">
                                 <div className="col text-center">
-                                <a href={song.link} className="spotify" target="_blank">
+                                <a href={song.link} className="spotify" target="_blank" rel="noreferrer">
                                     <img className="spotifyImg w-50" src="https://pnggrid.com/wp-content/uploads/2021/05/Spotify-PNG-Logo.png"  />
                                 </a>
                                 </div>

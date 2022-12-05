@@ -48,7 +48,7 @@ const Movie = () => {
                             </div>
                             <div className="row">
                                 <div className="col text-center">
-                                    <a href={movie.link} target="_blank" className="movieLink">
+                                    <a href={movie.link} target="_blank" rel="noreferrer" className="movieLink">
                                         <i className="bi bi-film movieIcon"/>
                                     </a>
                                 </div>

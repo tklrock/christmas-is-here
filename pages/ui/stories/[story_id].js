@@ -47,7 +47,7 @@ const Story = () => {
                             </div>
                             <div className="row">
                                 <div className="col text-center">
-                                    <a href={story.link} target="_blank" className="bookLink">
+                                    <a href={story.link} target="_blank" rel="noreferrer" className="bookLink">
                                         <i className="bi bi-book bookIcon"/>
                                     </a>
                                 </div>
