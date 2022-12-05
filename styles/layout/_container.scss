@@ -56,6 +56,9 @@
 .songCard {
   background: linear-gradient(#8cbd96ce,#fcf9f9bd,#d87e7ec6);
 }
+.songCard:hover {
+  box-shadow: 10px 10px;
+}
 .spotifyImg {
   width: 50%;
   margin-left: 25%;
@@ -68,7 +71,36 @@
   border-width: 3pt;
   border-radius: 100%
 }
+.storyDescription {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;    
+  max-height: 120px;     
+  -webkit-line-clamp: 6; /* Write the number of 
+                            lines you want to be 
+                            displayed */
+  -webkit-box-orient: vertical;
+  font-size: 14pt;
+}
 
+.bookLink {
+  font-size: 48pt;
+  color: black;
+  text-decoration: none;
+}
+.bookLink:hover {
+  color: rgb(14, 119, 247);
+}
+
+.movieLink {
+  font-size: 48pt;
+  color: black;
+  text-decoration: none;
+}
+.movieLink:hover {
+  color: rgb(14, 119, 247);
+}
 
 @font-face {
   font-family: CandyStriped;

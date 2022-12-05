@@ -31,7 +31,7 @@ export const SongCard = ({song}) => {
                     </div>
                     <div className="col-4 text-center">
                         
-                        <a href={song.link} className="spotify">
+                        <a href={song.link} className="spotify" target="_blank" rel="noreferrer">
                             <img className="spotifyImg" src="https://pnggrid.com/wp-content/uploads/2021/05/Spotify-PNG-Logo.png"  />
                         </a>
                     </div>

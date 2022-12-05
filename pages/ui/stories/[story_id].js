@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios';
 import path from 'path';
+import { Progress } from "reactstrap";
 
 
 const Story = () => {
@@ -24,35 +25,40 @@ const Story = () => {
         {story
             ? (
                 <div className="container">
-                    <div className="row">
-                        <div className="col-6">
+                    <div className="row text-center">
+                        <div className="col">
                             <h1>{story.title}</h1>
                         </div>
+                    </div>
+                    <div className="row">
                         <div className="col-6">
-                            <h2>{story.artist}</h2>
+                            <div className="row">
+                                <h2>{story.author}</h2>
+                            </div>
+                            <div className="row">
+                                <p style={{fontSize: '15pt'}}>{story.description}</p>
+                            </div>
+                            <div className="row">
+                                <div className="col">
+                                    <h4>Rating:<br />
+                                    <Progress style= {{height: '25px', fontSize:'14pt', textAlign:'center', backgroundColor: 'white'}}striped color="danger" value={story.rating * 20} >{story.rating}</Progress>
+                                    </h4>
+                                </div>                 
+                            </div>
+                            <div className="row">
+                                <div className="col text-center">
+                                    <a href={story.link} target="_blank" rel="noreferrer" className="bookLink">
+                                        <i className="bi bi-book bookIcon"/>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+                        <div className="col-6">
+                            <img src={story.image} className="w-100 rounded-4 m-2"/>
+                        </div>
+                        
                     </div>
                     
-                    <table>
-                        <thead>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Description</th>
-                            <th>Rating</th>
-                            <th>Link</th>
-                        </thead>
-                        <tbody>
-                            <tr key={story.story_id}>
-                                <td>{story.story_id}</td>
-                                <td>{story.title}</td>
-                                <td>{story.author}</td>
-                                <td>{story.description}</td>
-                                <td>{story.rating}</td>
-                                <td>{story.link}</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             ): <>
                 <div class="d-flex justify-content-center">

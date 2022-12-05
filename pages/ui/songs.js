@@ -27,9 +27,9 @@ const Songs = () => {
                 <div style={{display: 'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
                     {songs.map(song => (
                         // <Link key={song.song_id} href={`songs/${encodeURIComponent(song.song_id.toString())}`} className="text-black text-decoration-none" style={{width:'400px'}}>
-                        <div style={{width:'400px'}} key={song.song_id}>
+                        <Link key={song.song_id} href={`songs/${encodeURIComponent(song.song_id.toString())}`} className="text-black text-decoration-none" style={{width:'400px'}}>
                             <SongCard song = {song}/>
-                        </div>
+                        </Link>
                             
                         // </Link>
                     ))}
