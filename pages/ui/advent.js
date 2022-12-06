@@ -37,8 +37,7 @@ const Advent = () => {
     }
 
     const showAdventDay = (day, content, image, title) => {
-        // const today = new Date().getDate()
-        const today = 30
+        const today = new Date().getDate()
         if (day > today) {
             setModalContent(`It's not Dec ${day} yet! No peeksies!!`)
             toggle()
