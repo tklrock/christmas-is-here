@@ -6,32 +6,46 @@ import axios from 'axios';
 
 const Advent = () => {
 
-    const [message, setMessage] = useState(null);
+    const [modal, setModal] = useState(false);
+    const [message, setMessage] = useState();
+    const [modalContent, setModalContent] = useState();
+    const [modalTitle, setModalTitle] = useState();
+    const [modalImage, setModalImage] = useState();
+    const [modalDay, setModalDay] = useState();
 
     React.useEffect(() => {
         const baseURL = path.join(process.cwd(), 'api');
         axios.get(path.join(baseURL, 'advent')).then((response) => {
-          const data = response.data.results;
-           data.unshift(
-            {day: '', content: '', title: ''},
-            {day: '',content: '', title: ''},
-            {day: '',content: '', title: ''})
+            const data = response.data.results;
+            data.unshift(
+                {day: '', content: '', title: ''},
+                {day: '',content: '', title: ''},
+                {day: '',content: '', title: ''}
+            );
             setMessage(data);
         });
-      }, []);
-
-    const [modalContent, setModalContent] = useState('');
-    const [modal, setModal] = useState(false);
-
+    }, []);
+    
     const toggle = () => setModal(!modal);
 
-    const showAdventDay = (day, content) => {
+    const closeModal = () => {
+        setModalContent(null);
+        setModalTitle(null);
+        setModalImage(null);
+        setModalDay(null);
+        toggle();
+    }
+
+    const showAdventDay = (day, content, image, title) => {
         const today = new Date().getDate()
         if (day > today) {
             setModalContent(`It's not Dec ${day} yet! No peeksies!!`)
             toggle()
         } else {
             setModalContent(content)
+            setModalImage(image)
+            setModalTitle(title)
+            setModalDay(day)
             toggle()
         }  
     }
@@ -45,11 +59,11 @@ const Advent = () => {
                     {message[i].content && 
                         <button 
                             className={i % 2 == 0 ? 'btn btn-success' : 'btn btn-danger'}
-                            onClick={() => showAdventDay(message[i].day, message[i].content)}
+                            style={{width: '100%', height: '100%'}}
+                            onClick={() => showAdventDay(message[i].day, message[i].content, message[i].image, message[i].title)}
                         >
                             <AdventDay
                                 day={adventItem.day}
-                                content={adventItem.content}
                             />
                         </button>
                     }
@@ -61,9 +75,9 @@ const Advent = () => {
 
     return (
         <>
-            <h1>Advent</h1>
+            <h1>Christmas Activities Advent Calendar</h1>
             {message?.length > 0 ? 
-            <Table bordered responsive>
+            <Table bordered responsive style={{height: "75vh", tableLayout:'fixed'}}>
                 <thead>
                     <tr>
                         <th>Monday</th>
@@ -99,17 +113,21 @@ const Advent = () => {
             
             <Modal isOpen={modal}
                 toggle={toggle}
+                size='lg'
             >
                 <ModalHeader
-                    toggle={toggle}
+                    toggle={closeModal}
                 >
-                    It&apos;s the most wonderful time of the year!
+                    Advent activity for December {modalDay}
                 </ModalHeader>
                 <ModalBody>
-                    {modalContent}
+                    <h1>{modalTitle}</h1>
+                    <div>{modalContent}</div>
+                    <br/>
+                    <img src={modalImage} className="w-50 rounded-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 </ModalBody>
                 <ModalFooter>
-                    <Button className='btn btn-success' onClick={toggle}>
+                    <Button className='btn btn-success' onClick={closeModal}>
                         Close
                     </Button>
                 </ModalFooter>

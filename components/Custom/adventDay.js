@@ -1,4 +1,4 @@
-export const AdventDay = ({day, content}) => {
+export const AdventDay = ({day}) => {
 
     return (
         <>
