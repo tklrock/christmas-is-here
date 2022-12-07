@@ -26,17 +26,17 @@ export const SongCard = ({song}) => {
                     <div className="col-1"></div>                    
                 </div>
                 <div className="row text-center vertical-align-center">
-                    <div className="col-4">
-                        <h5>{song.year}</h5>
+                    <div className="col-6">
+                        <h4>{song.year}</h4>
                     </div>
-                    <div className="col-4 text-center">
+                    {/* <div className="col-4 text-center">
                         
                         <a href={song.link} className="spotify" target="_blank" rel="noreferrer">
                             <img className="spotifyImg" src="https://pnggrid.com/wp-content/uploads/2021/05/Spotify-PNG-Logo.png"  />
                         </a>
-                    </div>
-                    <div className="col-4">
-                        <h5>{song.Duration}</h5>
+                    </div> */}
+                    <div className="col-6">
+                        <h4>{song.Duration}</h4>
                     </div>
                 </div>
         </div>
