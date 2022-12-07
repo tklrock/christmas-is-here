@@ -1,9 +1,8 @@
-export const AdventDay = ({day, content}) => {
+export const AdventDay = ({day}) => {
 
     return (
         <>
             <h5>{day}</h5>
-            <div>{content}</div>
         </>
     )
 }

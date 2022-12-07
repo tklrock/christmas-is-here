@@ -56,10 +56,10 @@ const Header = ({ showMobmenu }) => {
         <Nav className="me-auto" navbar>
           <NavItem>
             <Link href="/" className="nav-link">
-              Starter
+              Home
             </Link>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <Link href="/about" className="nav-link">
               About
             </Link>
@@ -74,7 +74,7 @@ const Header = ({ showMobmenu }) => {
               <DropdownItem divider />
               <DropdownItem>Reset</DropdownItem>
             </DropdownMenu>
-          </UncontrolledDropdown>
+          </UncontrolledDropdown> */}
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="secondary">

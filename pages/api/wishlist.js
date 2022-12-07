@@ -2,11 +2,11 @@ import executeQuery from './db';
 
 export default async function handler(req, res) {
 
-    const query = "SELECT * FROM song ORDER BY title;";
+    const query = "SELECT * FROM wishlist;";
     const values = [];
     try {
-        const songs = await executeQuery(query, values);
-        res.status(200).json({results: songs});
+        const wishlist = await executeQuery(query, values);
+        res.status(200).json({results: wishlist});
     } catch (error){
         res.status(500).error({error: error.message});
     }
