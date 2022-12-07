@@ -182,7 +182,7 @@
 const Calendar = () => {
     return(
       <>
-      <h1>Google Calendar<a href="https://calendar.google.com/calendar/embed?src=02dfc498ebaa95949f7d20c5cff340496aa25d25b6132c101097a728672e32ab%40group.calendar.google.com&ctz=America%2FDenver" className="h3"><i className="bi bi-box-arrow-up-right"></i></a></h1>
+      <h1>Google Calendar <a href="https://calendar.google.com/calendar/embed?src=02dfc498ebaa95949f7d20c5cff340496aa25d25b6132c101097a728672e32ab%40group.calendar.google.com&ctz=America%2FDenver" className="h3"><i className="bi bi-box-arrow-up-right"></i></a></h1>
       <div className="text-center">
           <iframe id="google calendar"
               title="Google Calendar"
