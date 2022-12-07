@@ -40,8 +40,8 @@ export const WishList = ({myPath, getWishlist, items}) => {
                             <th style={{width:'5%', margin:'1%'}}>Delete</th>
                         </thead>
                         <tbody>                    
-                    {items.map(item => (
-                        <tr key={item.item_id} className={parseInt(item.item_id) % 2 === 0 ?("table-success"): ("table-danger")}>
+                    {items.map((item, index) => (
+                        <tr key={item.item_id} className={parseInt(index) % 2 === 0 ?("table-success"): ("table-danger")}>
                             <td style={{width:'20%', margin:'1%'}} className="h5">{item.name}</td>
                             <td style={{width:'15%', margin:'1%'}}>${item.price}</td>
                             <td style={{width:'50%', margin:'1%'}}>{item.notes}</td>
