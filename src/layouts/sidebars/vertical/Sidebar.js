@@ -44,11 +44,6 @@ const navigation = [
     href: "/ui/advent",
     icon: "bi bi-calendar-heart",
   },
-  {
-    title: "Budget",
-    href: "/ui/budget",
-    icon: "bi bi-piggy-bank",
-  },
 ];
 
 const Sidebar = ({ showMobilemenu }) => {
