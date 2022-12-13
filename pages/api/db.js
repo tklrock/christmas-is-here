@@ -1,12 +1,13 @@
 import mysql from "mysql2/promise"
+require('dotenv').config()
 
 export default async function executeQuery(query, values) { 
     const dbConnection = await mysql.createConnection({
-        host: "ec2-3-142-247-12.us-east-2.compute.amazonaws.com",
-        port: 3306,
-        database: "christmasapp",
-        user: "root",
-        password: "Cheerorfear22"  
+        host: process.env.DATABASE_ENDPOINT,
+        port: process.env.DATABASE_PORT,
+        database: process.env.DATABASE_SCHEMA,
+        user: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PASSWORD  
     });
     
     try {
