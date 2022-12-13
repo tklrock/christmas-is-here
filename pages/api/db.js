@@ -2,10 +2,10 @@ import mysql from "mysql2/promise"
 
 export default async function executeQuery(query, values) { 
     const dbConnection = await mysql.createConnection({
-        host: "christmasisheredb.cx3jifosqdzy.us-east-2.rds.amazonaws.com",
+        host: "ec2-3-142-247-12.us-east-2.compute.amazonaws.com",
         port: 3306,
         database: "christmasapp",
-        user: "admin",
+        user: "root",
         password: "Cheerorfear22"  
     });
     
