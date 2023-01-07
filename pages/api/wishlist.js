@@ -8,6 +8,6 @@ export default async function handler(req, res) {
         const wishlist = await executeQuery(query, values);
         res.status(200).json({results: wishlist});
     } catch (error){
-        res.status(500).error({error: error.message});
+        res.status(500).send({error: error.message});
     }
 }
